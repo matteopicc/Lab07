@@ -1,6 +1,7 @@
 package it.polito.tdp.poweroutages.DAO;
 
 import java.sql.Connection;
+import it.polito.tdp.poweroutages.model.NercIdMap;
 
 public class TestPowerOutagesDAO {
 
@@ -12,13 +13,15 @@ public class TestPowerOutagesDAO {
 			System.out.println("Connection Test PASSED");
 			
 			PowerOutageDAO dao = new PowerOutageDAO() ;
-			
-			System.out.println(dao.getNercList()) ;
+			NercIdMap a = new NercIdMap();
+			System.out.println(dao.getNercList(a)) ;
+			System.out.println(dao.getPowerOutageList(a)) ;
 
 		} catch (Exception e) {
 			System.err.println("Test FAILED");
 		}
-
+		
+		
 	}
 
 }
